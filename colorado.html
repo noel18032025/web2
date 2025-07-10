@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colorado 54</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    nav {
+      background: #001f3f;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    nav img.logo {
+      height: 50px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 20px;
+    }
+
+    nav li {
+      position: relative;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav li ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      display: none;
+      flex-direction: column;
+      min-width: 160px;
+      z-index: 1000;
+    }
+
+    nav li:hover ul {
+      display: flex;
+    }
+
+    nav li ul li a {
+      color: black;
+      padding: 10px;
+      white-space: nowrap;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8em;
+      color: white;
+      cursor: pointer;
+    }
+
+    header {
+      background: url('imgColorado/portada.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    header h1,
+    header p {
+      position: relative;
+      z-index: 2;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      color: #001f3f;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    footer {
+      background: #001f3f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        gap: 0;
+        margin-top: 10px;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav li {
+        width: 100%;
+      }
+
+      nav li ul {
+        position: static;
+        background: #f4f4f4;
+      }
+
+      nav li ul li a {
+        color: #001f3f;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+	
+	header {
+  background: url('imgColorado/portada.PNG') center/cover no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+@media (max-width: 600px) {
+  header {
+    min-height: 50vh;
+  }
+  header h1 {
+    font-size: 2em;
+  }
+  header p {
+    font-size: 1em;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <img src="imgColorado/logo.png" alt="Logo" class="logo">
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul id="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="#modelos">Modelos</a></li>
+      <li><a href="#amenidades">Amenidades</a></li>
+      <li><a href="#ubicacion">Ubicación</a></li>
+      <li>
+        <a href="#">Desarrollos</a>
+        <ul>
+          <li><a href="splendor.html">SPLENDOR</a></li>
+          <li><a href="ilinois.html">ILLINOIS</a></li>
+          <li><a href="estada.html">ESTADA</a></li>
+          <li><a href="almina.html">ALMINA</a></li>
+        </ul>
+      </li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+ <header>
+  <h1 style="z-index:2; font-size: 2.5em;">Colorado 54</h1>
+  <p style="z-index:2; font-size: 1.2em;">La mejor opción para vivir en Nápoles, CDMX</p>
+</header>
+  
+  
+  <section id="frase">
+    <h2>Inspiración</h2>
+   <h1> <blockquote>“Tu hogar es un refugio para todos tus sueños.”</blockquote></h1>
+  </section>
+  
+  <section id="presentacion" style="background-color: #f9f9f9; padding: 60px 20px;">
+  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; max-width: 1200px; margin: auto; gap: 40px;">
+    
+    <!-- Imagen -->
+    <div style="flex: 1 1 350px; text-align: center;">
+      <img src="imgColorado/sec1.PNG" alt="Fachada Colorado 54" style="width: 100%; max-width: 450px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    </div>
+
+    <!-- Texto -->
+    <div style="flex: 1 1 350px;">
+      <h2 style="color: #003366; font-size: 2rem; margin-bottom: 15px;">Colorado 54</h2>
+      <p style="margin-bottom: 10px; font-size: 1rem; line-height: 1.6;">
+        Complejo moderno ideal para invertir, vivir, disfrutar y ser parte de <strong style="color: #003366;">una zona exclusiva</strong> y reconocida de la Ciudad de México.
+      </p>
+      <p style="margin-bottom: 10px; font-size: 1rem; line-height: 1.6;">
+        El desarrollo se crea para esas personas que buscan progresar e incrementar su <strong style="color: #003366;">calidad de vida</strong>.
+      </p>
+      <h3 style="color: #003366; font-size: 1.5rem; margin-top: 20px;">¡Nápoles es prospera!</h3>
+      <p style="font-size: 1rem; margin-top: 10px;">
+        ¡El futuro tiene muchos nombres,<br> el tuyo es <strong style="color: #003366;">Colorado 54</strong>!
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="amenidades" style="background: #0f2c3e; color: white; padding: 60px 20px;">
+  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
+
+    <!-- Texto -->
+    <div style="flex: 1 1 350px;">
+      <h2 style="font-size: 2.5em; margin-bottom: 10px;color : white" >Amenidades</h2>
+      <h3 style="font-style: italic; font-weight: normal; font-size: 1.5em; margin-bottom: 20px;">Roof Garden Común</h3>
+      
+      <p style="margin-bottom: 10px; font-weight: bold;">¡Date un respiro!</p>
+      <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 10px;">
+        Despeja tu mente sin tener que salir de casa, vive una <strong style="color: #a4d7f5;">vida tranquila</strong> y sin preocupaciones desde el Roof Garden del desarrollo.
+      </p>
+      <p style="margin-top: 20px;"><strong>¡Es tu momento!</strong></p>
+    </div>
+
+    <!-- Imagen -->
+    <div style="flex: 1 1 350px; text-align: center;">
+      <img src="imgColorado/sec2.PNG" alt="Roof Garden Común" style="width: 100%; max-width: 500px; border-radius: 10px; box-shadow: 0 0 12px rgba(0,0,0,0.3);">
+    </div>
+
+  </div>
+</section>
+
+
+<section id="modelos" style="position: relative; padding: 100px 20px; background: url('imgColorado/departamentos.jpg') center/cover no-repeat; color: white; text-align: center; overflow-x: hidden;">
+  <div style="background: rgba(0,0,0,0.5); padding: 60px 20px; max-width: 100%; width: 100%; box-sizing: border-box; margin: auto; border-radius: 10px;">
+    <h2 style="font-size: 2.5em; margin-bottom: 20px;">Nuestros Departamentos</h2>
+    <p style="font-size: 1.3em; margin-bottom: 30px;">Desde <strong>69m²</strong> hasta <strong>78m²</strong></p>
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; font-size: 1.2em;">
+      <div style="min-width: 100px;"><i class="fa fa-bed"></i> 2</div>
+      <div style="min-width: 100px;"><i class="fa fa-bath"></i> 2</div>
+      <div style="min-width: 100px;"><i class="fa fa-car"></i> 1 & 2</div>
+    </div>
+  </div>
+</section>
+
+
+<section id="galeria" style="padding: 60px 20px; background-color: #f9f9f9; position: relative;">
+  <div style="max-width: 1200px; margin: auto; text-align: center; position: relative;">
+    <h2 style="color: #1d4567; font-size: 2.2em; margin-bottom: 20px;">Galería</h2>
+
+    <!-- Botones de navegación -->
+    <button onclick="moverCarrusel(-1)" class="flecha izq">❮</button>
+    <button onclick="moverCarrusel(1)" class="flecha der">❯</button>
+
+    <div id="carrusel" style="display: flex; overflow-x: auto; gap: 20px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scroll-behavior: smooth;">
+      <img src="imgColorado/1 (1).JPEG" alt="Imagen 1" class="carrusel-img" onclick="abrirModal(this)">
+      <img src="imgColorado/1 (2).JPEG" alt="Imagen 2" class="carrusel-img" onclick="abrirModal(this)">
+      <img src="imgColorado/1 (3).JPEG" alt="Imagen 3" class="carrusel-img" onclick="abrirModal(this)">
+      <img src="imgColorado/1 (4).JPEG" alt="Imagen 4" class="carrusel-img" onclick="abrirModal(this)">
+      <img src="imgColorado/1 (5).JPEG" alt="Imagen 5" class="carrusel-img" onclick="abrirModal(this)">
+      <img src="imgColorado/1 (6).JPEG" alt="Imagen 6" class="carrusel-img" onclick="abrirModal(this)">
+    </div>
+  </div>
+</section>
+
+<!-- ESTILOS EXTRAS -->
+<style>
+@media (max-width: 600px) {
+  #modelos h2 {
+    font-size: 1.8em !important;
+  }
+
+  #modelos p {
+    font-size: 1.1em !important;
+  }
+
+  #modelos div[style*="display: flex"] {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+}
+
+  .flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    color: white;
+    font-size: 2em;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background 0.3s;
+  }
+
+  .flecha:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .izq {
+    left: 5px;
+  }
+
+  .der {
+    right: 5px;
+  }
+
+  @media (max-width: 768px) {
+    .flecha {
+      font-size: 1.5em;
+      padding: 6px 10px;
+    }
+  }
+</style>
+
+<!-- SCRIPT PARA MOVER EL CARRUSEL -->
+<script>
+  function moverCarrusel(direccion) {
+    const carrusel = document.getElementById('carrusel');
+    const anchoImagen = carrusel.querySelector('img').offsetWidth + 20; // 20 = espacio entre
+    carrusel.scrollBy({
+      left: anchoImagen * direccion,
+      behavior: 'smooth'
+    });
+  }
+</script>
+
+<section id="sitios-interes" style="padding: 60px 20px; background-color: #ffffff;">
+  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
+    
+    <!-- Texto -->
+    <div style="flex: 1; min-width: 280px;">
+      <h2 style="color: #1d4567; font-size: 2.4em; margin-bottom: 10px;">Sitios de Interés</h2>
+      <p style="font-style: italic; font-size: 1.2em; margin-bottom: 20px;">
+        ¡Todo conecta con Colorado 54!
+      </p>
+      <p style="font-size: 1.1em; color: #333;">
+        Vivir en una de las colonias más exclusivas de la Ciudad de México, como lo es <strong style="color:#1d4567;">Nápoles</strong>, 
+        trae <strong>ventajas</strong> en cuanto a amplias calles, áreas verdes y gran rentabilidad.
+      </p>
+    </div>
+
+    <!-- Imagen -->
+    <div style="flex: 1; min-width: 280px;">
+      <img src="imgColorado/sec3.PNG" alt="Sitios de Interés" style="width: 100%; border-radius: 10px;">
+    </div>
+  </div>
+</section>
+
+
+
+<section id="zona-exclusiva" style="padding: 60px 20px; background-color: #ffffff;">
+  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+    
+    <!-- Columna de texto -->
+    <div style="flex: 1; min-width: 300px;">
+      <h2 style="color: #1d4567; font-size: 2.4em; margin-bottom: 10px;">Sitios de Interés</h2>
+      <p style="font-size: 1.1em; color: #333;">
+        Es una <strong>ubicación privilegiada</strong> para las familias modernas, en la zona hay restaurantes, centros comerciales, centros culturales, cafeterías, bares, parques y movilidad variada.
+      </p>
+      <p style="font-size: 1.1em; color: #333;">
+        Al este se encuentra <strong>Condesa</strong>, oeste la <strong>Roma Norte</strong>, hacia el sur la <strong>Ciudad de los Deportes</strong> y al norte <strong>Juárez</strong>.
+      </p>
+      <p style="font-size: 1.2em; font-style: italic; color: #1d4567;"><strong>¡Invierte en una zona exclusiva!</strong></p>
+    </div>
+
+    <!-- Columna de imágenes -->
+    <div style="flex: 1; min-width: 300px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+      <img src="imgColorado/1.PNG" alt="Torre Azul" style="width: 100%; border-radius: 8px;">
+      <img src="imgColorado/2.PNG" alt="Estadio" style="width: 100%; border-radius: 8px;">
+      <img src="imgColorado/3.PNG" alt="Parque" style="width: 100%; grid-column: span 2; border-radius: 8px;">
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Modal para mostrar imagen en grande -->
+<div id="modalImagen" class="modal" onclick="cerrarModal()" style="display: none;">
+  <span class="cerrar" onclick="cerrarModal()">&times;</span>
+  <img class="modal-contenido" id="imgAmpliada">
+</div>
+
+<!-- Estilos del carrusel y modal -->
+<style>
+  .carrusel-img {
+    width: 300px;
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    scroll-snap-align: center;
+    transition: transform 0.3s;
+  }
+
+  .carrusel-img:hover {
+    transform: scale(1.05);
+  }
+
+  .modal {
+    position: fixed;
+    z-index: 999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  .modal-contenido {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+  }
+
+  .cerrar {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .cerrar:hover {
+    color: #ccc;
+  }
+</style>
+
+<!-- Script para abrir/cerrar el modal -->
+<script>
+  function abrirModal(img) {
+    document.getElementById("modalImagen").style.display = "block";
+    document.getElementById("imgAmpliada").src = img.src;
+  }
+
+  function cerrarModal() {
+    document.getElementById("modalImagen").style.display = "none";
+  }
+</script>
+
+<section id="ubicacion" style="padding: 60px 20px; background-color: #f9f9f9;">
+  <div style="max-width: 1200px; margin: auto; text-align: center;">
+    <h2 style="color: #1d4567; font-size: 2.4em; margin-bottom: 20px;">Ubicación</h2>
+    <p style="font-size: 1.1em; color: #333; margin-bottom: 30px;">
+      Colorado 54, Colonia Nápoles, CDMX. Cerca de todo lo que necesitas.
+    </p>
+    <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.358455826878!2d-99.1749745257397!3d19.396912241821507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ffcc2026c277%3A0x8823e393762ab02c!2sColorado%2054%2C%20N%C3%A1poles%2C%20Benito%20Ju%C3%A1rez%2C%2003810%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1748146355208!5m2!1ses-419!2smx" 
+        width="600" height="450" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+
+
+  <footer id="contacto">
+    <p>&copy; 2025 Colorado 54 | Desarrollo inmobiliario</p>
+    <p><i class="fa fa-phone"></i> (55) 1234-5678 | <i class="fa fa-envelope"></i> contacto@colorado54.mx</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>

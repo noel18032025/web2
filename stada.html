@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ESTADA Living History</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+  <style>
+  
+  <style>
+  .portada-estada {
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+  margin-bottom: -4px;
+}
+
+.portada-estada img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+    #departamentos {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    #departamentos h2 {
+      text-align: center;
+      font-size: 2.5em;
+      margin: 60px 0 30px;
+      color: #2c3e50;
+    }
+
+    .departamento {
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      margin: 20px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .departamento:hover {
+      transform: scale(1.01);
+    }
+
+    .departamento img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .text-content {
+      padding: 20px;
+    }
+
+    .text-content h3 {
+      margin: 0 0 10px;
+      font-size: 1.6em;
+      color: #2980b9;
+    }
+
+    .text-content p {
+      margin: 0;
+      font-size: 1em;
+      line-height: 1.5;
+    }
+
+    @media (min-width: 768px) {
+      .departamento {
+        flex-direction: row;
+        height: 280px;
+      }
+
+      .departamento img {
+        width: 50%;
+        height: 100%;
+      }
+
+      .text-content {
+        width: 50%;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+    .navbar {
+      background: #000;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      flex-wrap: wrap;
+    }
+    .navbar img.logo {
+      height: 50px;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 10px 0 0;
+      padding: 0;
+    }
+    .navbar ul li {
+      position: relative;
+    }
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px;
+      display: block;
+    }
+    .navbar ul li ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      display: none;
+      flex-direction: column;
+      min-width: 150px;
+      z-index: 999;
+    }
+    .navbar ul li:hover ul {
+      display: flex;
+    }
+    .navbar ul li ul li a {
+      color: #000;
+      padding: 10px;
+      white-space: nowrap;
+    }
+    header {
+      background: #000;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .amenity, .departamento {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .amenity img, .departamento img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+    }
+    .text-content {
+      flex: 1;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .gallery-grid a {
+      display: block;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .gallery-grid a:hover img {
+      transform: scale(1.05);
+    }
+    iframe {
+      width: 100%;
+      height: 450px;
+      border: 0;
+      border-radius: 8px;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+      }
+      .navbar ul li {
+        width: 100%;
+      }
+      .navbar ul li a {
+        width: 100%;
+        padding-left: 0;
+      }
+      .navbar.active ul {
+        display: flex;
+      }
+      .amenity, .departamento {
+        flex-direction: column;
+      }
+    }
+
+.departamento img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  padding: 20px; /* Espaciado interno dentro del contenedor */
+  box-sizing: border-box; /* Asegura que el padding no rompa el diseño */
+  border-radius: 10px; /* Opcional: bordes redondeados */
+}
+.departamento img {
+  margin-bottom: 10px;
+  }
+.portada-estada {
+  background-image: url('imgEstada/portada.PNG');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll; /* importante para móvil */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 100px 20px;
+  position: relative;
+  width: 100%;
+  min-height: 75vh;
+}
+
+.portada-estada::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* opcional: oscurece para resaltar texto */
+  z-index: 1;
+}
+
+.contenido-portada {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 10px;
+}
+
+.contenido-portada h2 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.contenido-portada p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+/* 📱 Versión móvil */
+@media (max-width: 768px) {
+  .portada-estada {
+    min-height: 50vh;
+    padding: 60px 15px;
+  }
+
+  .contenido-portada h2 {
+    font-size: 2em;
+  }
+
+  .contenido-portada p {
+    font-size: 1em;
+  }
+}
+@media (max-width: 768px) {
+  .portada-estada {
+    min-height: 80px; /* o ajusta según el contenido */
+    background-size: contain; /* en lugar de cover */
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar" id="navbar">
+  
+    <!--<img src="img/1183a7dd-f74d-484b-8f75-27e704e1abc2.png" alt="Logo" class="logo">-->
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul>
+      <li><a href="#" onclick="closeMenu()">Inicio</a></li>
+      <li><a href="#" onclick="closeMenu()">About</a></li>
+      <li><a href="#" onclick="closeMenu()">Service</a></li>
+      <li><a href="#" onclick="closeMenu()">Menu</a></li>
+      <li>
+        <a href="#" onclick="event.preventDefault()">Desarrollos</a>
+        <ul>
+          <li><a href="splendor.html" onclick="closeMenu()">SPLENDOR</a></li>
+          <li><a href="illinois.html" onclick="closeMenu()">ILLINOIS</a></li>
+          <li><a href="estada.html" onclick="closeMenu()">ESTADA</a></li>
+          <li><a href="colorado.html" onclick="closeMenu()">COLORADO</a></li>
+          <li><a href="almina.html" onclick="closeMenu()">ALMINA</a></li>
+        </ul>
+      </li>
+      <li><a href="#" onclick="closeMenu()">Contact</a></li>
+    </ul>
+  </nav>
+
+<header class="portada-estada">
+  <div class="contenido-portada">
+  </div>
+</header>
+
+<section class="portada">
+  <div class="contenido">
+    <h2>Bienvenido a ESTADA</h2>
+    <p>Proyecto único en la CDMX que fusiona lo mejor de los principios del siglo XX con la comodidad y modernidad de una de las grandes urbes del mundo. Ubicado en Roma 9, Col. Juárez, Delegación Cuauhtémoc.</p>
+  </div>
+</section>
+
+
+  <section>
+    <h2>Amenidades</h2>
+    <div class="amenity"><img src="imgEstada/yoga.PNG"><div class="text-content"><h3>Yoga Room y Wellness Center</h3><p>Terraza para meditar y hacer ejercicio al aire libre.</p></div></div>
+    <div class="amenity"><img src="imgEstada/terraza.PNG"><div class="text-content"><h3>Terraza Verde y Asadores</h3><p>Ideal para reuniones familiares o con amigos.</p></div></div>
+    <div class="amenity"><img src="imgEstada/negocio.PNG"><div class="text-content"><h3>Centro de Negocios</h3><p>Espacio moderno para juntas o trabajo remoto.</p></div></div>
+    <div class="amenity"><img src="imgEstada/gym.PNG"><div class="text-content"><h3>Gimnasio</h3><p>Con excelente vista y equipo funcional.</p></div></div>
+  </section>
+
+
+<section id="departamentos">
+  <h2>Departamentos Tipo A</h2>
+
+  <div class="departamento">
+    <img src="imgEstada/a1.PNG">
+    <div class="text-content">
+      <h3>Modelo A-1</h3>
+      <p>Loft divisible, 50.87 m² + terraza de 5.73 m², 1 habitación, 1 baño.</p>
+      <p class="disponible">Disponibilidad: Disponible</p>
+    </div>
+  </div>
+
+  <div class="departamento">
+    <img src="imgEstada/a2.PNG">
+    <div class="text-content">
+      <h3>Modelo A-2</h3>
+      <p>Loft divisible, 58.60 m² + terraza de 10.16 m², 1 habitación, 1 ½ baños.</p>
+      <p class="exclusivo">Disponibilidad: Exclusivo</p>
+    </div>
+  </div>
+
+  <div class="departamento">
+     <img src="imgEstada/a3.PNG">
+    <div class="text-content">
+      <h3>Modelo A-3</h3>
+      <p>Divisible, 112.61 m², 2 a 3 habitaciones, 2 baños.</p>
+      <p class="disponible">Disponibilidad: Disponible</p>
+    </div>
+  </div>
+
+  <div class="departamento">
+     <img src="imgEstada/a4.PNG">
+    <div class="text-content">
+      <h3>Modelo A-4</h3>
+      <p>Divisible, 102.79 m², 2 a 3 habitaciones, 2 baños.</p>
+      <p class="disponible">Disponibilidad: Disponible</p>
+    </div>
+  </div>
+
+  <div class="departamento">
+    <img src="imgEstada/a5.PNG">
+    <div class="text-content">
+      <h3>Modelo A-5</h3>
+      <p>Divisible, 114.99 m², 2 a 3 habitaciones, 2 baños.</p>
+      <p class="exclusivo">Disponibilidad: Exclusivo</p>
+    </div>
+  </div>
+
+  <div class="departamento">
+     <img src="imgEstada/a6.PNG">
+    <div class="text-content">
+      <h3>Modelo A-6</h3>
+      <p>Divisible, 101.41 m², 2 a 3 habitaciones, 2 baños.</p>
+      <p class="disponible">Disponibilidad: Disponible</p>
+    </div>
+  </div>
+
+  <h2>Departamentos Tipo B</h2>
+
+  <div class="departamento">
+     <img src="imgEstada/b1.PNG">
+    <div class="text-content">
+      <h3>Modelo B-1</h3>
+      <p>125.95 m², 2 habitaciones, 2 baños.</p>
+      <p class="exclusivo">Disponibilidad: Exclusivo</p>
+    </div>
+  </div>
+
+  <div class="departamento">
+    <img src="imgEstada/b2.PNG">
+    <div class="text-content">
+      <h3>Modelo B-2</h3>
+      <p>90.29 m², 2 habitaciones, 2 baños.</p>
+      <p class="exclusivo">Disponibilidad: Exclusivo</p>
+    </div>
+  </div>
+
+  <div class="departamento">
+     <img src="imgEstada/b3.PNG">
+    <div class="text-content">
+      <h3>Modelo B-3</h3>
+      <p>93.15 m², 2 habitaciones, 2 baños.</p>
+      <p class="exclusivo">Disponibilidad: Exclusivo</p>
+    </div>
+  </div>
+
+  <div class="departamento">
+     <img src="imgEstada/b4.PNG">
+    <div class="text-content">
+      <h3>Modelo B-4</h3>
+      <p>100.33 m², 2 habitaciones, 2 baños.</p>
+      <p class="exclusivo">Disponibilidad: Exclusivo</p>
+    </div>
+  </div>
+
+  <div class="departamento">
+     <img src="imgEstada/b5.PNG">
+    <div class="text-content">
+      <h3>Modelo B-5</h3>
+      <p>87.84 m², 2 habitaciones, 2 baños.</p>
+      <p class="disponible">Disponibilidad: Disponible</p>
+    </div>
+  </div>
+
+  <div class="departamento">
+    <img src="imgEstada/b6.PNG">
+    <div class="text-content">
+      <h3>Modelo B-6</h3>
+      <p>87.81 m², 2 habitaciones, 2 baños.</p>
+      <p class="disponible">Disponibilidad: Disponible</p>
+    </div>
+  </div>
+
+  <div class="departamento">
+    <img src="imgEstada/b7.PNG">
+    <div class="text-content">
+      <h3>Modelo B-7</h3>
+      <p>93.16 m² + terraza de 9.42 m², 2 habitaciones, 2 baños.</p>
+      <p class="disponible">Disponibilidad: Disponible</p>
+    </div>
+  </div>
+
+  <div class="departamento">
+    <img src="imgEstada/b8.PNG">
+    <div class="text-content">
+      <h3>Modelo B-8</h3>
+      <p>97.71 m² + terraza de 9.06 m², 2 habitaciones, 2 baños.</p>
+      <p class="disponible">Disponibilidad: Disponible</p>
+    </div>
+  </div>
+</section>
+
+
+  <section>
+    <h2>Galería</h2>
+    <div class="gallery-grid">
+      <a href="imgpage/stada/1 (1).JPEG"><img src="imgpage/stada/1 (1).JPEG"></a>
+      <a href="imgpage/stada/1 (2).JPEG"><img src="imgpage/stada/1 (2).JPEG"></a>
+      <a href="imgpage/stada/1 (3).JPEG"><img src="imgpage/stada/1 (3).JPEG"></a>
+      <a href="imgpage/stada/1 (4).JPEG"><img src="imgpage/stada/1 (4).JPEG"></a>
+      <a href="imgpage/stada/1 (5).JPEG"><img src="imgpage/stada/1 (5).JPEG"></a>
+      <a href="imgpage/stada/1 (6).JPEG"><img src="imgpage/stada/1 (6).JPEG"></a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ubicación</h2>
+    <p>Ubicado en Roma 9, Col. Juárez, cerca de museos, restaurantes y parques.</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60213.70518670029!2d-99.21359963487556!3d19.39699360483183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff828848f7c7%3A0xc11d8df65b568ffb!2sESTADA!5e0!3m2!1ses-419!2smx!4v1748146408474!5m2!1ses-419!2smx" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+  
+  <section id="ubicacion-privilegiada" style="padding: 40px 20px; text-align: center;">
+  <h2 style="font-size: 2.5em; margin-bottom: 20px;">Ubicación Privilegiada</h2>
+  <img src="imgEstada/angel.png" alt="Ángel de la independencia" style="max-width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px;">
+  <p style="font-size: 1.1em; max-width: 800px; margin: auto; line-height: 1.6;">
+    Ubicada en el corazón de la ciudad a solo unos minutos de teatros, escuelas, restaurantes, en el corazón cultural y financiero de la urbe. 
+    Moverse en coche no será necesario, estamos a 150 metros del teatro Milán, a 400 metros del mercado Juárez, y a 50 metros del supermercado más cercano, 
+    rodeado de restaurantes, universidades, vida cultural y nocturna.
+  </p>
+</section>
+<section id="lugares-interes" style="padding: 40px 20px; background-color: #7E8082; color: white; font-family: 'Montserrat', sans-serif;">
+  <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 30px;">Lugares de Interés</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; max-width: 1200px; margin: auto;">
+    
+    <!-- TEATROS -->
+    <div style="flex: 1; min-width: 200px;">
+      <h3 style="border-bottom: 2px solid white;">TEATROS</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li>A. Teatro Milán - Foro Lucerna.</li>
+        <li>B. Foro 37.</li>
+        <li>C. Nuevo Teatro Silvia Pinal.</li>
+        <li>D. Teatro El Milagro.</li>
+      </ul>
+
+      <h3 style="margin-top: 30px; border-bottom: 2px solid white;">PARQUES Y PLAZAS</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li>E. Plaza Giordano Bruno.</li>
+        <li>F. Parque Jesús Reyes Heroles.</li>
+      </ul>
+
+      <h3 style="margin-top: 30px; border-bottom: 2px solid white;">MUSEOS</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li>G. Cheetos Museo Monstruoso.</li>
+        <li>H. Museo de cera.</li>
+        <li>I. Museo de Ripley.</li>
+        <li>J. Museo del chocolate.</li>
+        <li>K. Museo EBC.</li>
+      </ul>
+    </div>
+
+    <!-- RESTAURANTES Y BARES -->
+    <div style="flex: 1; min-width: 200px;">
+      <h3 style="border-bottom: 2px solid white;">RESTAURANTES Y BARES</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li>L. Comedor Lucerna.</li>
+        <li>M. Hanky Panky Cocktail Bar.</li>
+        <li>N. Hop The Beer Experience 1.</li>
+        <li>Ñ. Parker & Lenox.</li>
+        <li>O. Taberna Luciferina.</li>
+        <li>P. Café La Habana.</li>
+        <li>Q. Plaza Milán.</li>
+      </ul>
+    </div>
+
+    <!-- ARQUITECTURA -->
+    <div style="flex: 1; min-width: 200px;">
+      <h3 style="border-bottom: 2px solid white;">ARQUITECTURA</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li>R. Ex-mansión de María Félix.</li>
+        <li>S. Templo del Sagrado Corazón de Jesús.</li>
+        <li>T. Hotel Imperial.</li>
+        <li>U. Hotel Emporio.</li>
+        <li>V. Casa Gargollo.</li>
+        <li>W. El Castillo Colorado.</li>
+      </ul>
+
+      <h3 style="margin-top: 30px; border-bottom: 2px solid white;">INSTITUCIONES</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li>X. Comisión Federal de Electricidad.</li>
+        <li>Y. Cámara de Senadores.</li>
+        <li>Z. Secretaría de Gobernación.</li>
+      </ul>
+
+      <h3 style="margin-top: 30px; border-bottom: 2px solid white;">ENTRETENIMIENTO</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li>1. Reforma 222.</li>
+        <li>2. Bazar fusión.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section id="mapa-zona" style="padding: 40px 20px; text-align: center;">
+  <h2 style="font-size: 2.5em; margin-bottom: 20px;">Mapa de Zona</h2>
+  <p style="font-size: 1.1em; max-width: 800px; margin: auto auto 20px; line-height: 1.6;">
+    Lugares de interés, múltiples actividades y centros atractivos cerca de ESTADA.
+  </p>
+
+  <img src="imgEstada/mapa-zona.png" alt="Mapa de zona ESTADA" style="width: 100%; max-width: 800px; height: auto; border-radius: 10px;">
+</section>
+
+  <footer>
+    <p>ESTADA Living History - Roma 9, Col. Juárez, CDMX</p>
+    <p>Contacto: contacto@estada.mx | www.estada.mx</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+  <script>
+    function toggleMenu() {
+      document.getElementById('navbar').classList.toggle('active');
+    }
+    function closeMenu() {
+      if (window.innerWidth <= 768) {
+        document.getElementById('navbar').classList.remove('active');
+      }
+    }
+    $(document).ready(function () {
+      $('.gallery-grid').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        gallery: { enabled: true }
+      });
+    });
+  </script>
+</body>
+</html>

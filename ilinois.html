@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Illinois 70 - Ciudad de los Deportes</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: #001f3f;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    nav img.logo {
+      height: 50px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav li {
+      position: relative;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav li ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      display: none;
+      flex-direction: column;
+      min-width: 160px;
+      z-index: 1000;
+    }
+
+    nav li:hover ul {
+      display: flex;
+    }
+
+    nav li ul li a {
+      color: #001f3f;
+      padding: 10px;
+      white-space: nowrap;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8em;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        gap: 0;
+        margin-top: 10px;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav li {
+        width: 100%;
+      }
+
+      nav li ul {
+        position: static;
+        background: #f4f4f4;
+      }
+
+      nav li ul li a {
+        color: #001f3f;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* HEADER */
+    header {
+      background: url('imgIlinois/portada.PNG') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 140px 20px;
+      position: relative;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .galeria-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .mapa {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .cta a {
+      background: #003366;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+	/* HEADER */
+header {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  background: url('imgIlinois/portada.PNG') center center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+header h1,
+header p {
+  position: relative;
+  z-index: 2;
+  margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+  header {
+    min-height: 250px;
+    padding: 40px 15px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+}
+
+.caracter-section {
+  background-color: #003399; /* azul similar al de la imagen */
+  color: white;
+  padding: 60px 20px;
+}
+
+.caracter-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  align-items: center;
+  gap: 30px;
+}
+
+.caracter-left {
+  flex: 1 1 250px;
+  text-align: center;
+}
+
+.caracter-left h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.caracter-left span {
+  display: block;
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.caracter-divider {
+  width: 2px;
+  background: white;
+  height: 150px;
+}
+
+.caracter-right {
+  flex: 2 1 400px;
+  color: white;
+}
+
+.caracter-frase {
+  color: #f04e23;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.caracter-right p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .caracter-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .caracter-divider {
+    display: none;
+  }
+
+  .caracter-left h1 {
+    font-size: 2.2rem;
+  }
+
+  .caracter-frase {
+    font-size: 1.5rem;
+  }
+}
+.il-beneficios {
+  background: linear-gradient(to right, #ff5e00, #ff0000);
+  padding: 60px 20px;
+  color: #003366;
+}
+
+.il-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.il-left,
+.il-right {
+  flex: 1 1 50%;
+  padding: 30px;
+}
+
+.il-left img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.il-right h2 {
+  font-size: 2rem;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.il-right h2 span {
+  display: block;
+  font-style: italic;
+  font-size: 1.3rem;
+}
+
+.il-right ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.il-right ul li {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.il-right strong {
+  color: #003366;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .il-container {
+    flex-direction: column;
+  }
+
+  .il-left,
+  .il-right {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .il-right h2 {
+    font-size: 1.7rem;
+  }
+
+  .il-right ul li {
+    font-size: 1rem;
+  }
+}
+
+.seccion-disponibles {
+  background-color: #ea4726; /* color rojo-naranja similar al diseño */
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.contenedor-disponibles h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.contenedor-disponibles .disponibles {
+  display: block;
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-top: 10px;
+}
+
+.contenedor-disponibles p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contenedor-disponibles h2 {
+    font-size: 2rem;
+  }
+
+  .contenedor-disponibles .disponibles {
+    font-size: 2.2rem;
+  }
+
+  .contenedor-disponibles p {
+    font-size: 1rem;
+  }
+}
+
+.tipo-depa {
+  padding: 60px 20px;
+  background-color: #fff;
+  color: #003366;
+}
+
+.depa-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  align-items: center;
+  gap: 40px;
+}
+
+.depa-info {
+  flex: 1 1 400px;
+}
+
+.depa-nombre {
+  color: #ea4726;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.depa-medida {
+  font-size: 1.5rem;
+  color: #003366;
+}
+
+.depa-frase {
+  font-size: 1.4rem;
+  color: #003366;
+  font-weight: bold;
+  margin: 20px 0 15px;
+}
+
+.depa-info ul {
+  list-style: disc inside;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #003366;
+}
+
+.depa-logo {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #003366;
+  font-size: 1.2rem;
+}
+
+.depa-logo em {
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.depa-linea {
+  flex-grow: 1;
+  height: 2px;
+  background-color: #ea4726;
+}
+
+.depa-plano {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.depa-plano img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .depa-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .depa-logo {
+    justify-content: center;
+  }
+}
+
+/* Ya heredado: .tipo-depa, .depa-container, .depa-info, .depa-plano, etc. */
+
+.tipo-b .depa-nombre {
+  color: #ea4726; /* rojo para el título */
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.tipo-b .depa-medida {
+  font-size: 1.5rem;
+  color: #003366;
+}
+
+.tipo-b .depa-submedida {
+  display: block;
+  font-size: 1rem;
+  color: #003366;
+  font-style: italic;
+}
+
+.tipo-b .depa-frase {
+  font-size: 1.4rem;
+  color: #003366;
+  font-weight: bold;
+  margin: 20px 0 15px;
+}
+
+.tipo-b ul {
+  list-style: disc inside;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #003366;
+}
+
+.tipo-b .depa-logo {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #003366;
+  font-size: 1.2rem;
+}
+
+.tipo-b .depa-linea {
+  flex-grow: 1;
+  height: 2px;
+  background-color: #ea4726;
+}
+
+.tipo-ph .depa-nombre {
+  color: #ea4726;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.tipo-ph .depa-medida {
+  font-size: 1.5rem;
+  color: #003366;
+}
+
+.tipo-ph .depa-frase {
+  font-size: 1.4rem;
+  color: #003366;
+  font-weight: bold;
+  margin: 20px 0 15px;
+}
+
+.tipo-ph ul {
+  list-style: disc inside;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #003366;
+}
+
+.tipo-ph .depa-logo {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #003366;
+  font-size: 1.2rem;
+}
+
+.tipo-ph .depa-linea {
+  flex-grow: 1;
+  height: 2px;
+  background-color: #ea4726;
+}
+
+.seccion-oportunidad {
+  background-color: #ea4726;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.oportunidad-contenido h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.oportunidad-contenido p {
+  color: #003366;
+  font-size: 1.4rem;
+  font-weight: 500;
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+.oportunidad-contenido strong {
+  font-weight: 700;
+  color: #003366;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .oportunidad-contenido h2 {
+    font-size: 1.8rem;
+  }
+
+  .oportunidad-contenido p {
+    font-size: 1.1rem;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <img src="imgIllinois/logo.png" alt="Logo Illinois 70" class="logo">
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul id="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="#sobre">Sobre el desarrollo</a></li>
+      <li><a href="#modelos">Modelos</a></li>
+      <li><a href="#ubicacion">Ubicación</a></li>
+      <li>
+        <a href="#">Desarrollos</a>
+        <ul>
+          <li><a href="almina.html">ALMINA</a></li>
+          <li><a href="splendor.html">SPLENDOR</a></li>
+          <li><a href="stada.html">ESTADA</a></li>
+          <li><a href="colorado.html">COLORADO</a></li>
+		   <li><a href="ilinois.html">ILLINOIS</a></li>
+        </ul>
+      </li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- HEADER -->
+  <header>
+  
+  </header>
+
+  <!-- SECCIÓN SOBRE -->
+  <section class="seccion-oportunidad">
+  <div class="oportunidad-contenido">
+    <h2>¡No dejes pasar esta oportunidad!</h2>
+    <p>Illinois 70 te ofrece los últimos <strong>5 departamentos disponibles</strong> para que disfrutes de un estilo de vida único con carácter propio.</p>
+  </div>
+</section>
+
+  
+  <section class="caracter-section">
+  <div class="caracter-container">
+    <div class="caracter-left">
+      <h1>Illinois <span>Setenta</span></h1>
+    </div>
+    <div class="caracter-divider"></div>
+    <div class="caracter-right">
+      <h2 class="caracter-frase">"Carácter propio<br>en cada espacio"</h2>
+      <p><strong>Residencial exclusivo de 14 departamentos en la icónica<br>colonia Ciudad de los Deportes, Benito Juárez, CDMX.</strong></p>
+      <p>Un proyecto que combina diseño contemporáneo, espacios abiertos y funcionalidad, pensado para quienes buscan estilo, comodidad y privacidad.</p>
+    </div>
+  </div>
+</section>
+
+<section class="il-beneficios">
+  <div class="il-container">
+    <div class="il-left">
+      <img src="imgIlinois/familia.PNG" alt="Familia feliz en su hogar en Illinois 70">
+    </div>
+    <div class="il-right">
+      <h2>Illinois <span>Setenta</span></h2>
+      <ul>
+        <li><strong>6 niveles</strong> que maximizan la luz natural y la amplitud.</li>
+        <li><strong>2 cajones de estacionamiento</strong> y<br><strong>1 bodega privada</strong> para cada departamento.</li>
+        <li>Seguridad garantizada con <strong>caseta de vigilancia</strong> y control de acceso.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="seccion-disponibles">
+  <div class="contenedor-disponibles">
+    <h2>Opciones de departamentos<br><span class="disponibles">DISPONIBLES</span></h2>
+    <p>Diseñados para adaptarse a diferentes estilos de vida,<br>
+    Illinois 70 ofrece las siguientes opciones:</p>
+  </div>
+</section>
+
+
+
+<!-- Carrusel de Illinois -->
+<section id="carrusel-ilinois" style="background-color: #fff; padding: 60px 20px; position: relative;">
+  <h2 style="text-align: center; font-size: 2rem; margin-bottom: 30px; color: #1d3557;">Galería Illinois</h2>
+
+  <!-- Botón anterior -->
+  <button onclick="scrollCarousel(-1)" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); border: none; color: white; font-size: 30px; padding: 10px; cursor: pointer; z-index: 10;">&#10094;</button>
+
+  <!-- Carrusel con scroll -->
+  <div id="carouselContainer" style="overflow-x: auto; white-space: nowrap; scroll-behavior: smooth; padding: 10px 40px;">
+    <div style="display: inline-flex; gap: 20px;">
+           <img src="imgIlinois/1 (1).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (2).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (3).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (4).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (5).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (6).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (7).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (8).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (9).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (10).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (11).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (12).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (13).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (14).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (15).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (16).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (17).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (18).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (19).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (20).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (21).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (22).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (23).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (24).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (25).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+<img src="imgIlinois/1 (26).JPEG" onclick="openModal(this.src)" style="height: 200px; cursor: pointer; border-radius: 8px;">
+    </div>
+  </div>
+
+  <!-- Botón siguiente -->
+  <button onclick="scrollCarousel(1)" style="position: absolute; top: 50%; right: 0; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); border: none; color: white; font-size: 30px; padding: 10px; cursor: pointer; z-index: 10;">&#10095;</button>
+</section>
+
+<!-- MODAL para imágenes -->
+<div id="imgModal" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+  <span onclick="closeModal()" style="position:absolute; top:20px; right:30px; font-size: 40px; color: #fff; cursor: pointer;">&times;</span>
+  <img id="modalImg" style="max-width:90%; max-height:90%; border-radius: 10px;">
+</div>
+
+<!-- JS para abrir/cerrar modal e ir al siguiente -->
+<script>
+  function openModal(src) {
+    document.getElementById('imgModal').style.display = 'flex';
+    document.getElementById('modalImg').src = src;
+  }
+  function closeModal() {
+    document.getElementById('imgModal').style.display = 'none';
+  }
+
+  function scrollCarousel(direction) {
+    const container = document.getElementById('carouselContainer');
+    const scrollAmount = 300;
+    container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+  }
+</script>
+
+
+
+<section class="tipo-depa tipo-a">
+  <div class="depa-container">
+    <div class="depa-info">
+      <h3><span class="depa-nombre">Depa Tipo A</span><br><span class="depa-medida">90.27 mts² con balcón</span></h3>
+      <h4 class="depa-frase">Funcionalidad llena de luz</h4>
+      <ul>
+        <li>2 recámaras, la principal con baño completo.</li>
+        <li>Cocina abierta</li>
+        <li>Cuarto de lavado</li>
+        <li>Balcón</li>
+      </ul>
+      <div class="depa-logo">
+        <span>Illinois <em>Setenta</em></span>
+        <div class="depa-linea"></div>
+      </div>
+    </div>
+    <div class="depa-plano">
+      <img src="imgIlinois/tipoA.png" alt="Plano Depa Tipo A">
+    </div>
+  </div>
+</section>
+
+
+<section class="tipo-depa tipo-b">
+  <div class="depa-container">
+  <div class="depa-plano">
+      <img src="imgIlinois/tipoB.png" alt="Plano Depa Tipo B">
+    </div>
+    <div class="depa-info">
+      <h3>
+        <span class="depa-nombre">Depa Tipo B</span><br>
+        <span class="depa-medida">140.34 mts²</span> <span class="depa-submedida">con balcón<br>opción a 3ra recámara</span>
+      </h3>
+      <h4 class="depa-frase">Privacidad & Flexibilidad</h4>
+      <ul>
+        <li>2 recámaras, opción a una tercera para estudio o recámara adicional.</li>
+        <li>Vestidor y baño completo en la recámara principal.</li>
+        <li>Cocina abierta.</li>
+        <li>Área de lavado.</li>
+        <li>Amplia terraza.</li>
+      </ul>
+      <div class="depa-logo">
+        <span>Illinois <em>Setenta</em></span>
+        <div class="depa-linea"></div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<section class="tipo-depa tipo-ph">
+  <div class="depa-container">
+    <div class="depa-info">
+      <h3>
+        <span class="depa-nombre">Pent Houses</span><br>
+        <span class="depa-medida">199.50 mts²</span>
+      </h3>
+      <h4 class="depa-frase">Con roof garden y balcón</h4>
+      <ul>
+        <li>2 recámaras, opción a una tercera para estudio o recámara adicional.</li>
+        <li>Vestidor y baño completo en la recámara principal.</li>
+        <li>Cocina abierta.</li>
+        <li>Área de lavado.</li>
+        <li>Amplia terraza y roof privado.</li>
+      </ul>
+      <div class="depa-logo">
+        <span>Illinois <em>Setenta</em></span>
+        <div class="depa-linea"></div>
+      </div>
+    </div>
+    <div class="depa-plano">
+      <img src="imgIlinois/pent.png" alt="Plano Penthouse Illinois 70">
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+  <!-- SECCIÓN UBICACIÓN -->
+  <section id="ubicacion">
+    <h2>Ubicación</h2>
+    <p>Illinois 70, Ciudad de los Deportes, Benito Juárez, CDMX</p>
+    <iframe class="mapa" src="https://www.google.com/maps?q=Illinois+70+Ciudad+de+los+Deportes,+Benito+Juárez,+CDMX&output=embed" allowfullscreen></iframe>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>¡Agenda tu visita hoy!</h2>
+    <p>Contáctanos vía WhatsApp y conoce los últimos departamentos disponibles</p>
+	<br>
+		<br>
+	<a href="https://wa.me/525543737354" target="_blank"><i class="fab fa-whatsapp"></i> Contactar por WhatsApp</a>
+	
+  </section>
+  
+
+ 
+  <!-- FOOTER -->
+  <footer id="contacto">
+    <p>&copy; 2025 Illinois 70 - Ciudad de los Deportes</p>
+    <p><i class="fa fa-phone"></i> 55 4373 7354 | <i class="fa fa-envelope"></i> contacto@illinois70.mx</p>
+  </footer>
+
+  <!-- SCRIPT MENU -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadatos existentes... -->
+    
+    <!-- Añade estos nuevos enlaces para la galería -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <style>
+        /* Estilos para la galería */
+        .gallery-section {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .gallery-title h4 {
+            color: #D4AF37;
+            letter-spacing: 5px;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .gallery-title h1 {
+            font-size: 2.5rem;
+            color: #333;
+            font-weight: 700;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        .gallery-caption h3 {
+            margin: 0 0 5px;
+            font-size: 1.1rem;
+        }
+        
+        .gallery-caption p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .gallery-title h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Tu contenido existente... -->
+
+    <!-- Galería de Imágenes -->
+    <section class="gallery-section">
+        <div class="gallery-container">
+            <div class="gallery-title">
+                <h4 class="text-primary text-uppercase">Galería</h4>
+                <h1 class="display-4">Descubre Splendor Coyoacán</h1>
+                <p>Explora nuestros espacios, amenidades y la elegancia que nos define</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Imagen 1 -->
+                <a href="imgsplendor/1.JPEG" class="gallery-item" title="Interiores de lujo">
+                    <img src="imgsplendor/1.JPEG" alt="Interior residencial" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Interiores Elegantes</h3>
+                        <p>Diseño contemporáneo con acabados de alta calidad</p>
+                    </div>
+                </a>
+                
+                <!-- Imagen 2 -->
+                <a href="imgsplendor/2.JPEG" class="gallery-item" title="Área de amenidades">
+                    <img src="imgsplendor/2.JPEG" alt="Club House" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Club House</h3>
+                        <p>Espacio exclusivo para residentes</p>
+                    </div>
+                </a>
+                
+                <!-- Imagen 3 -->
+                <a href="imgsplendor/3.JPEG" class="gallery-item" title="Gimnasio equipado">
+                    <img src="imgsplendor/3.JPEG" alt="Gimnasio" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Gimnasio</h3>
+                        <p>Equipo de última generación</p>
+                    </div>
+                </a>
+                
+                <!-- Imagen 4 -->
+                <a href="imgsplendor/4.JPEG" class="gallery-item" title="Área de alberca">
+                    <img src="imgsplendor/4.JPEG" alt="Área de piscina" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Área de Piscina</h3>
+                        <p>Diseño moderno para tu relajación</p>
+                    </div>
+                </a>
+                
+                <!-- Imagen 5 -->
+                <a href="imgsplendor/5.JPEG" class="gallery-item" title="Áreas verdes">
+                    <img src="imgsplendor/5.JPEG" alt="Jardines" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Jardines</h3>
+                        <p>Espacios verdes para disfrutar</p>
+                    </div>
+                </a>
+                
+                <!-- Imagen 6 -->
+                <a href="imgsplendor/6.JPEG" class="gallery-item" title="Vistas desde la terraza">
+                    <img src="imgsplendor/6.JPEG" alt="Terraza" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Terraza</h3>
+                        <p>Vistas panorámicas de Coyoacán</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts para la galería -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.gallery-grid').magnificPopup({
+                delegate: 'a',
+                type: 'image',
+                gallery: {
+                    enabled: true,
+                    navigateByImgClick: true,
+                    preload: [0,1] // Preloads images 0 and 1 before opening
+                },
+                image: {
+                    titleSrc: function(item) {
+                        return item.el.attr('title');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

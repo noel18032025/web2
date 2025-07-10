@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>SPLENDOR</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free Website Template" name="keywords">
+    <meta content="Free Website Template" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.min.css" rel="stylesheet">
+	 <!-- Añade estos nuevos enlaces para la galería -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    
+	
+	<style>
+        /* Estilos para la galería */
+        .gallery-section {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .gallery-title h4 {
+            color: #D4AF37;
+            letter-spacing: 5px;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .gallery-title h1 {
+            font-size: 2.5rem;
+            color: #333;
+            font-weight: 700;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        .gallery-caption h3 {
+            margin: 0 0 5px;
+            font-size: 1.1rem;
+        }
+        
+        .gallery-caption p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .gallery-title h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0 nav-bar">
+        <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+            <a href="index.html" class="navbar-brand px-lg-4 m-0">
+                <h1 class="m-0 display-4 text-uppercase text-white">SPLENDOR</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto p-4">
+                    <a href="index.html" class="nav-item nav-link active">Inicio</a>
+                    <a href="#sobre" class="nav-item nav-link">Sobre Nosotros</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Desarrollos</a>
+                        <div class="dropdown-menu text-capitalize">
+                              <a href="splendor.html" class="dropdown-item">SPLENDOR</a>
+                            <a href="ilinois.html" class="dropdown-item">ILLIONOIS</a>
+							<a href="stada.html" class="dropdown-item">ESTADA</a>
+                            <a href="colorado.html" class="dropdown-item">COLORADO</a>
+							<a href="almina.html" class="dropdown-item">ALMINA</a>
+                        </div>
+                    </div>
+                    <a href="#contact" class="nav-item nav-link">Contacto</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 mb-5">
+        <div id="blog-carousel" class="carousel slide overlay-bottom" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="img/about.png" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <h2 class="text-primary font-weight-medium m-0">SPLENDOR</h2>
+                        <h1 class="display-1 text-white m-0">COYOACAN</h1>
+                        <!--<h2 class="text-white m-0">* SINCE 1950 *</h2>-->
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/Captura.PNG" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <!--<h2 class="text-primary font-weight-medium m-0">SPLENDOR</h2>
+                        <h1 class="display-1 text-white m-0">COYOACAN</h1>
+                        <h2 class="text-white m-0">* SINCE 1950 *</h2>-->
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#blog-carousel" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#blog-carousel" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5" id="sobre">
+        <div class="container">
+            <div class="section-title">
+                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Sobre Nosotros</h4>
+                <h1 class="display-4">Serving Since 1950</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 py-0 py-lg-5">
+                    <h1 class="mb-3">INTERIORES</h1>
+                    <h5 class="mb-3">Disfruta del balance perfecto entre tranquilidad y modernidad en el
+mejor desarrollo de la zona. Goza de una conectividad inmejorable a
+la ciudad y el placer de vivir en una zona llena de vida, comercios,
+restaurantes y entretenimiento</p>
+                    <a href="" class="btn btn-secondary font-weight-bold py-2 px-4 mt-2">Learn More</a>
+                </div>
+                <div class="col-lg-4 py-5 py-lg-0" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100" src="img/about.png" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-4 py-0 py-lg-5">
+                    <h1 class="mb-3">AMENIDADES</h1>
+                    <p>En Splendor Coyoacán podrás disfrutar de
+su Club House, con amenidades que te
+brindarán comodidad y satisfacción.
+Además se parte del cambio y goza del
+primer desarrollo con fuentes eléctricas de
+carga para coches.</p>
+                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-2"></i>Lorem ipsum dolor sit amet</h5>
+                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>Lorem ipsum dolor sit amet</h5>
+                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>Lorem ipsum dolor sit amet</h5>
+                    <a href="" class="btn btn-primary font-weight-bold py-2 px-4 mt-2">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+	
+	 <!-- Service Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="section-title">
+                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Our Services</h4>
+                <h1 class="display-4">AMENIDADES</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-5">
+                    <div class="row align-items-center">
+                        <div class="col-sm-5">
+                            <img class="img-fluid mb-3 mb-sm-0" src="img/BusinesCenter.PNG" alt="">
+                        </div>
+                        <div class="col-sm-7">
+                            <h4><i class="fa fa-award service-icon"></i>Bussines Center</h4>
+                            <p class="m-0">Espacio profesional donde pueden arrendar ambientes de trabajo totalmente equipados, con salas de conferencias, servicio de recepción de mensajes, oficinas virtuales, entre otros. .</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-5">
+                    <div class="row align-items-center">
+                        <div class="col-sm-5">
+                            <img class="img-fluid mb-3 mb-sm-0" src="img/gimnacio.PNG" alt="">
+                        </div>
+                        <div class="col-sm-7">
+                            <h4><i class="fa fa-award service-icon"></i>Gimnacio</h4>
+                            <p class="m-0">Espacios diseñados y equipados para la realización de actividades físicas y ejercicios destinados a mejorar la salud, la condición física y el bienestar de las personas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-5">
+                    <div class="row align-items-center">
+                        <div class="col-sm-5">
+                            <img class="img-fluid mb-3 mb-sm-0" src="img/ludoteca.PNG" alt="">
+                        </div>
+                        <div class="col-sm-7">
+                            <h4><i class="fa fa-award service-icon"></i>Ludoteca</h4>
+                            <p class="m-0">Espacio diseñado especialmente para que los niños puedan jugar, aprender y desarrollar sus habilidades de forma lúdica1</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-5">
+                    <div class="row align-items-center">
+                        <div class="col-sm-5">
+                          
+                        </div>
+                        <div class="col-sm-7">
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+<section class="gallery-section">
+        <div class="gallery-container">
+            <div class="gallery-title">
+                <h4 class="text-primary text-uppercase">Galería</h4>
+                <h1 class="display-4">Descubre Splendor Coyoacán</h1>
+                <p>Explora nuestros espacios, amenidades y la elegancia que nos define</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Imagen 1 -->
+                <a href="imgsplendor/1.JPEG" class="gallery-item" title="Interiores de lujo">
+                    <img src="imgsplendor/1.JPEG" alt="Interior residencial" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Interiores Elegantes</h3>
+                        <p>Diseño contemporáneo con acabados de alta calidad</p>
+                    </div>
+                </a>
+                
+                <!-- Imagen 2 -->
+                <a href="imgsplendor/2.JPEG" class="gallery-item" title="Área de amenidades">
+                    <img src="imgsplendor/2.JPEG" alt="Club House" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Club House</h3>
+                        <p>Espacio exclusivo para residentes</p>
+                    </div>
+                </a>
+                
+                <!-- Imagen 3 -->
+                <a href="imgsplendor/3.JPEG" class="gallery-item" title="Gimnasio equipado">
+                    <img src="imgsplendor/3.JPEG" alt="Gimnasio" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Gimnasio</h3>
+                        <p>Equipo de última generación</p>
+                    </div>
+                </a>
+                
+                <!-- Imagen 4 -->
+                <a href="imgsplendor/4.JPEG" class="gallery-item" title="Área de alberca">
+                    <img src="imgsplendor/4.JPEG" alt="Área de piscina" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Área de Piscina</h3>
+                        <p>Diseño moderno para tu relajación</p>
+                    </div>
+                </a>
+                
+                <!-- Imagen 5 -->
+                <a href="imgsplendor/5.JPEG" class="gallery-item" title="Áreas verdes">
+                    <img src="imgsplendor/5.JPEG" alt="Jardines" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Jardines</h3>
+                        <p>Espacios verdes para disfrutar</p>
+                    </div>
+                </a>
+                
+                <!-- Imagen 6 -->
+                <a href="imgsplendor/6.JPEG" class="gallery-item" title="Vistas desde la terraza">
+                    <img src="imgsplendor/6.JPEG" alt="Terraza" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Terraza</h3>
+                        <p>Vistas panorámicas de Coyoacán</p>
+                    </div>
+                </a>
+				<!-- Imagen 7 -->
+                <a href="imgsplendor/7.JPEG" class="gallery-item" title="Vistas desde la terraza">
+                    <img src="imgsplendor/7.JPEG" alt="Terraza" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Terraza</h3>
+                        <p>Vistas panorámicas de Coyoacán</p>
+                    </div>
+                </a>
+				<!-- Imagen 68-->
+                <a href="imgsplendor/8.JPEG" class="gallery-item" title="Vistas desde la terraza">
+                    <img src="imgsplendor/8.JPEG" alt="Terraza" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Terraza</h3>
+                        <p>Vistas panorámicas de Coyoacán</p>
+                    </div>
+                </a>
+				<!-- Imagen 9 -->
+                <a href="imgsplendor/9.JPEG" class="gallery-item" title="Vistas desde la terraza">
+                    <img src="imgsplendor/9.JPEG" alt="Terraza" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Terraza</h3>
+                        <p>Vistas panorámicas de Coyoacán</p>
+                    </div>
+                </a>
+				<!-- Imagen 10 -->
+                <a href="imgsplendor/10.JPEG" class="gallery-item" title="Vistas desde la terraza">
+                    <img src="imgsplendor/10.JPEG" alt="Terraza" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Terraza</h3>
+                        <p>Vistas panorámicas de Coyoacán</p>
+                    </div>
+                </a>
+				<!-- Imagen 11 -->
+                <a href="imgsplendor/11.JPEG" class="gallery-item" title="Vistas desde la terraza">
+                    <img src="imgsplendor/11.JPEG" alt="Terraza" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Terraza</h3>
+                        <p>Vistas panorámicas de Coyoacán</p>
+                    </div>
+                </a>
+				<!-- Imagen 12 -->
+                <a href="imgsplendor/12.JPEG" class="gallery-item" title="Vistas desde la terraza">
+                    <img src="imgsplendor/12.JPEG" alt="Terraza" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Terraza</h3>
+                        <p>Vistas panorámicas de Coyoacán</p>
+                    </div>
+                </a>
+				<!-- Imagen 13-->
+                <a href="imgsplendor/13.JPEG" class="gallery-item" title="Vistas desde la terraza">
+                    <img src="imgsplendor/13.JPEG" alt="Terraza" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Terraza</h3>
+                        <p>Vistas panorámicas de Coyoacán</p>
+                    </div>
+                </a>
+				<!-- Imagen 14 -->
+                <a href="imgsplendor/14.JPEG" class="gallery-item" title="Vistas desde la terraza">
+                    <img src="imgsplendor/14.JPEG" alt="Terraza" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Terraza</h3>
+                        <p>Vistas panorámicas de Coyoacán</p>
+                    </div>
+                </a>
+				<!-- Imagen 15 -->
+                <a href="imgsplendor/15.JPEG" class="gallery-item" title="Vistas desde la terraza">
+                    <img src="imgsplendor/15.JPEG" alt="Terraza" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Terraza</h3>
+                        <p>Vistas panorámicas de Coyoacán</p>
+                    </div>
+                </a>
+				<!-- Imagen 16-->
+                <a href="imgsplendor/16.JPEG" class="gallery-item" title="Vistas desde la terraza">
+                    <img src="imgsplendor/16.JPEG" alt="Terraza" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Terraza</h3>
+                        <p>Vistas panorámicas de Coyoacán</p>
+                    </div>
+                </a>
+				<!-- Imagen 17-->
+                <a href="imgsplendor/17.JPEG" class="gallery-item" title="Vistas desde la terraza">
+                    <img src="imgsplendor/17.JPEG" alt="Terraza" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h3>Terraza</h3>
+                        <p>Vistas panorámicas de Coyoacán</p>
+                    </div>
+                </a>
+				
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- Offer Start -->
+    <div class="offer container-fluid my-5 py-5 text-center position-relative overlay-top overlay-bottom">
+        <div class="row align-items-center">
+                        <div class="col-sm-5">
+                           <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3764.189627089551!2d-99.1588261!3d19.3609402!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff001b7f4f61%3A0xc78f01b434e36e5f!2sSplendor%20Coyoac%C3%A1n!5e0!3m2!1ses-419!2smx!4v1748146314948!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="col-sm-7">
+                            <h4 style="color: white"><i class="fa fa-table service-icon"></i>UBICACIÓN</h4>
+                            <p style="color :white" class="m-0">Ubicado en División del Norte #2325, casi esquina
+con Río Churubusco, Splendor Coyoacán te
+conecta facilmente con las principales arterias de
+la ciudad.</p>
+                        </div>
+                    </div>
+    </div>
+    <!-- Offer End -->
+
+
+    <!-- Menu Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="section-title">
+                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Menu & Pricing</h4>
+                <h1 class="display-4">ESAPACIOS</h1>
+            </div>
+			<div class="row">
+			<div class="col-lg-12 mb-5">
+                    <div class="row align-items-center">
+                        <div class="col-sm-5">
+                            <img class="img-fluid mb-3 mb-sm-0" src="img/desde.PNG" alt="">
+                        </div>
+                        
+                    </div>
+                </div>
+				
+				
+			</div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 class="mb-5">*</h1>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-4 col-sm-3">
+                            <img  src="img/baño.PNG" alt="">
+                           
+                        </div>
+                        <div class="col-8 col-sm-9">
+                            
+                           
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-4 col-sm-3">
+                            <img  src="img/recamara.PNG" alt="">
+                            
+                        </div>
+                        <div class="col-8 col-sm-9">
+                           
+                            
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-4 col-sm-3">
+                            <img  src="img/estacionamiento.PNG" alt="">
+                          
+                        </div>
+                        <div class="col-8 col-sm-9">
+                           
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="mb-5">*</h1>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-4 col-sm-3">
+                            <img  src="img/balcon.PNG" alt="">
+                           
+                        </div>
+                        <div class="col-8 col-sm-9">
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-4 col-sm-3">
+                            <img  src="img/carga.PNG"  alt="">
+                            
+                        </div>
+                        <div class="col-8 col-sm-9">
+                            
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-4 col-sm-3">
+                            
+                          
+                        </div>
+                        <div class="col-8 col-sm-9">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Menu End -->
+
+
+    <!-- Reservation Start -->
+   
+    <!-- Reservation End -->
+	
+
+
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="section-title">
+                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Testimonial</h4>
+                <h1 class="display-4">Our Clients Say</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel">
+                <div class="testimonial-item">
+                    <div class="d-flex align-items-center mb-3">
+                        <img class="img-fluid" src="img/testimonial-1.jpg" alt="">
+                        <div class="ml-3">
+                            <h4>Client Name</h4>
+                            <i>Profession</i>
+                        </div>
+                    </div>
+                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor tempor ipsum sanct clita</p>
+                </div>
+                <div class="testimonial-item">
+                    <div class="d-flex align-items-center mb-3">
+                        <img class="img-fluid" src="img/testimonial-2.jpg" alt="">
+                        <div class="ml-3">
+                            <h4>Client Name</h4>
+                            <i>Profession</i>
+                        </div>
+                    </div>
+                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor tempor ipsum sanct clita</p>
+                </div>
+                <div class="testimonial-item">
+                    <div class="d-flex align-items-center mb-3">
+                        <img class="img-fluid" src="img/testimonial-3.jpg" alt="">
+                        <div class="ml-3">
+                            <h4>Client Name</h4>
+                            <i>Profession</i>
+                        </div>
+                    </div>
+                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor tempor ipsum sanct clita</p>
+                </div>
+                <div class="testimonial-item">
+                    <div class="d-flex align-items-center mb-3">
+                        <img class="img-fluid" src="img/testimonial-4.jpg" alt="">
+                        <div class="ml-3">
+                            <h4>Client Name</h4>
+                            <i>Profession</i>
+                        </div>
+                    </div>
+                    <p class="m-0">Sed ea amet kasd elitr stet, stet rebum et ipsum est duo elitr eirmod clita lorem. Dolor tempor ipsum sanct clita</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top" id="contact">
+        <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Contacto directo:</h4>
+              
+                <p><i class="fa fa-phone-alt mr-2"></i>+52 5555 090636</p>
+                <p class="m-0"><i class="fa fa-envelope mr-2"></i>delserviciosinmobiliarios1@gmail.com</p>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Nuestras redes</h4>
+                <p>Siguenos a traves de:</p>
+                <div class="d-flex justify-content-start">
+                 <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+				<a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+				<a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+				<a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-instagram"></i></a>
+				<a class="btn btn-lg btn-outline-light btn-lg-square" href="#"><i class="fab fa-tiktok"></i></a>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Horarios de atencion</h4>
+                <div>
+                    <h6 class="text-white text-uppercase">Lunes - Viernes</h6>
+                    <p>09.00 AM - 06.00 PM</p>
+                    <h6 class="text-white text-uppercase">Sabados</h6>
+                    <p>10.00 AM - 02.00 PM</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Newsletter</h4>
+                <p>Amet elitr vero magna sed ipsum sit kasd sea elitr lorem rebum</p>
+                <div class="w-100">
+                    <div class="input-group">
+                        <input type="text" class="form-control border-light" style="padding: 25px;" placeholder="Your Email">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary font-weight-bold px-3">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+            <p class="mb-2 text-white">Copyright &copy; <a class="font-weight-bold" href="#">Domain</a>. All Rights Reserved.</a></p>
+            <p class="m-0 text-white">Designed by <a class="font-weight-bold" href="https://htmlcodex.com">HTML Codex</a></p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.gallery-grid').magnificPopup({
+                delegate: 'a',
+                type: 'image',
+                gallery: {
+                    enabled: true,
+                    navigateByImgClick: true,
+                    preload: [0,1] // Preloads images 0 and 1 before opening
+                },
+                image: {
+                    titleSrc: function(item) {
+                        return item.el.attr('title');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
