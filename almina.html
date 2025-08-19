@@ -223,7 +223,22 @@ nav li ul li a {
     max-width: 100%;
   }
 }
-
+/* Widget flotante WhatsApp */
+.whatsapp-float{
+position: fixed;
+bottom: 24px; right: 24px;
+width: 56px; height: 56px;
+background: #25D366; color:#fff;
+display:inline-flex; align-items:center; justify-content:center;
+font-size: 28px; border-radius:50%;
+box-shadow: 0 10px 20px rgba(0,0,0,.25);
+z-index: 2000;
+transition: transform .2s ease, box-shadow .2s ease;
+}
+.whatsapp-float:hover{ transform: translateY(-2px); box-shadow:0 14px 28px rgba(0,0,0,.3) }
+.whatsapp-float::after{ content:""; position:absolute; inset:0; border-radius:50%; border:2px solid rgba(37,211,102,.45); transform:scale(1); opacity:.75; animation:wa-pulse 2s infinite; pointer-events:none }
+@keyframes wa-pulse{ 0%{transform:scale(1);opacity:.75} 100%{transform:scale(1.6);opacity:0} }
+@media (max-width: 767px){ .whatsapp-float{ bottom:16px; right:16px } }
 
   </style>
 </head>
@@ -470,7 +485,10 @@ nav li ul li a {
     </div>
   </div>
 </section>
-
+	<!-- BOTÓN FLOTANTE WHATSAPP -->
+<a id="whatsapp-widget" class="whatsapp-float" href="#" target="_blank" rel="noopener" aria-label="Chatear por WhatsApp" title="Chatea por WhatsApp">
+<i class="fab fa-whatsapp" aria-hidden="true"></i>
+</a>
   
 <!-- Sección de Galería con Magnific Popup -->
 <section id="galeria">
@@ -635,6 +653,57 @@ nav li ul li a {
       }
     });
   });
+  
+  
+  
+		(function(){
+// Número de WhatsApp (LADA+NÚMERO, solo dígitos). Demo: +52 5651376548
+const WHATSAPP_NUMBER = "525651376548";
+
+
+// Proyectos/Secciones a observar (id -> nombre)
+const PROJECT_SECTIONS = [
+{ id: "victor-hugo-154", name: "Victor Hugo 154" },
+{ id: "inicio", name: "Rumania 908" }
+];
+
+
+const widget = document.getElementById("whatsapp-widget");
+let currentProject = "Urbana";
+
+
+function setWidgetLink(projectName){
+const message = `Hola, me interesa ${projectName} de Grupo Urbana. ¿Me compartes más información?`;
+const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+widget.setAttribute("href", url);
+}
+
+
+// Inicial: usa el H1 del hero
+const heroH1 = document.querySelector("#inicio h1");
+currentProject = heroH1 ? heroH1.textContent.trim() : "Urbana";
+setWidgetLink(currentProject);
+
+
+// Actualiza por intersección (50% visible)
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+const sec = PROJECT_SECTIONS.find(s => s.id === entry.target.id);
+if(sec && sec.name !== currentProject){
+currentProject = sec.name;
+setWidgetLink(currentProject);
+}
+}
+});
+}, { threshold: 0.5 });
+
+
+PROJECT_SECTIONS.forEach(s => {
+const el = document.getElementById(s.id);
+if(el) observer.observe(el);
+});
+})();
 </script>
 </body>
 </html>
